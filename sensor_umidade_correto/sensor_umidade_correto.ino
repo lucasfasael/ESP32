@@ -6,12 +6,12 @@ int Rele = 4;
 
 char convert[20];
 
-const char *ssid = "Malu_2.4G"; 
-const char *password = "bionica10"; 
+const char *ssid = "ESTACIO-VISITANTES"; 
+const char *password = "estacio@2014"; 
 
 
-const char *mqtt_broker = "192.168.101.8";
-const char *topic = "umidade";
+const char *mqtt_broker = "10.12.184.191";
+const char *topic = "lf/umidade";
 const int mqtt_port = 1883;
 
 WiFiClient espClient;
