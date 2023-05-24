@@ -29,7 +29,9 @@ void loop() {
   // Exemplo de exibição de texto
   display.clearDisplay();
   display.setCursor(0, 0);
-  display.println("Olá, ESP32!");
+  display.println("Lufe");
+  display.println("    D.   ");
+  display.println("Teacher");
   display.display();
   
   delay(1000);

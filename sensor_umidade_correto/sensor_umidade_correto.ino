@@ -6,11 +6,11 @@ int Rele = 4;
 
 char convert[20];
 
-const char *ssid = "ESTACIO-VISITANTES"; 
-const char *password = "estacio@2014"; 
+const char *ssid = "Malu_2.4G"; 
+const char *password = "bionica10"; 
 
 
-const char *mqtt_broker = "10.12.184.191";
+const char *mqtt_broker = "test.mosquitto.org";
 const char *topic = "lf/umidade";
 const int mqtt_port = 1883;
 
@@ -42,7 +42,6 @@ void setup() {
       Serial.println(" tente novamente ");                          
     }
    delay(2000);
-   client.publish(topic, convert);
    client.subscribe(topic);
   }
 }
@@ -59,7 +58,7 @@ void callback(char *topic, byte *payload, unsigned int length) {
 }
 
 void loop() {
-  umidade = map(analogRead(A10),3350,3575,100,0);
+  umidade = map(analogRead(A10),3430,3550,100,0);
     Serial.println("Nível da umidade: ");
     //Serial.println(analogRead(A10));
     Serial.println(umidade);
@@ -75,5 +74,6 @@ void loop() {
       itoa(umidade, convert, 10);
       client.publish(topic, convert);
       //Serial.println(itoa(umidade, convert, 4));
-  delay(1000);
+  delay(2000);
+  client.publish(topic, convert);
 }
